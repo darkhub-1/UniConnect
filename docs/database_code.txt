@@ -1,0 +1,28 @@
+user table : 
+
+
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+
+admission table : 
+
+CREATE TABLE admissions (
+    admission_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    father_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    previous_course VARCHAR(255) NOT NULL,
+    marksheet VARCHAR(255) NOT NULL,
+    desired_course VARCHAR(255) NOT NULL,
+    national_id_proof VARCHAR(255) NOT NULL,
+    
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
